@@ -1,0 +1,26 @@
+{
+  "name": "dataStruct",
+  "version": "1.0.0",
+  "description": "数据结构学习,javascript语言实现",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanjian2323/dataStruct.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanjian2323/dataStruct/issues"
+  },
+  "homepage": "https://github.com/yanjian2323/dataStruct#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
