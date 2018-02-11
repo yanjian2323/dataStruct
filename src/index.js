@@ -1,5 +1,8 @@
-import fn from './selectionSort/selectionSort';
+import { generateRandomArray, printArray, testSort } from './util/testSortHelper';
+import selectionSort from './selectionSort/selectionSort';
 
-let arr = [99,43,12,42,129,43,23,41,1,2,5,6,9,5];
+let n = 100000;
+let arr = generateRandomArray(n, 1, n);
 
-fn(arr);
+testSort('selectionSort', selectionSort, arr);
+// printArray(arr);

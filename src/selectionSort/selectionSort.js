@@ -12,9 +12,6 @@ const selectionSort = (arr) => {
 		// 交换位置
 		[arr[minIndex],arr[i]] = [arr[i],arr[minIndex]];
 	}
-	for (let i = 0; i < len; i++) {
-		console.log(...arr);
-	}
 };
 
 export default selectionSort;
