@@ -7,6 +7,20 @@ export function generateRandomArray (n, rangeL, rangeR) {
 	return arr;
 }
 
+// 生成一个近乎有序的数组
+export function generateNearlyOrderedArray (n, swapTimes) {
+	let arr = [];
+	for (let i = 0; i < n; i++) {
+		arr.push(i);
+	}
+	for (let i = 0; i < swapTimes; i++) {
+		let x = parseInt(Math.random() * n);
+		let y = parseInt(Math.random() * n);
+		[arr[x],arr[y]] = [arr[y],arr[x]];
+	}
+	return arr;
+}
+
 // 打印数组元素
 export function printArray (arr) {
 	console.log(...arr);
@@ -33,6 +47,11 @@ export function testSort (sortName, sortFn, arr) {
 	}
 	let execTime = (execAfter - execBefore) / 1000;
 	console.log(`${sortName}:${execTime}s`);
+}
+
+// 复制一个新数组
+export function copyArray (arr) {
+	return JSON.parse(JSON.stringify(arr));
 }
 
 // export generateRandomArray;
