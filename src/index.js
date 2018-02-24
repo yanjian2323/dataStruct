@@ -7,11 +7,13 @@ import bubbleSort2 from './bubbleSort/bubbleSort2';
 import mergeSort from './mergeSort/mergeSort';
 import quickSort from './quickSort/quickSort';
 import quickSort2 from './quickSort/quickSort2';
+import quickSort3 from './quickSort/quickSort3';
 
 let n = 1000000;
 let arr = generateRandomArray(n, 1, n);
 // let arr = generateNearlyOrderedArray(n, 1000);
 let arr2 = copyArray(arr);
+let arr3 = copyArray(arr);
 
 // testSort('selectionSort', selectionSort, arr);
 // testSort('insertionSort', insertionSort, arr);
@@ -21,4 +23,5 @@ let arr2 = copyArray(arr);
 // testSort('mergeSort', mergeSort, arr);
 testSort('quickSort', quickSort, arr);
 testSort('quickSort2', quickSort2, arr2);
+testSort('quickSort3', quickSort2, arr3);
 // printArray(arr);
