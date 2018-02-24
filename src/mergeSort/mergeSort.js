@@ -24,7 +24,7 @@ function _mergeSort (arr, l, r) {
 	if (l >= r) {
 		return;
 	}
-	let middle = (l + r) / 2;
+	let middle = parseInt((l + r) / 2);
 	_mergeSort(arr, l, middle);
 	_mergeSort(arr, middle + 1, r);
 	merge(arr, l, middle, r);
