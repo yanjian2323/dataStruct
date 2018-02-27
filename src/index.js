@@ -8,6 +8,7 @@ import mergeSort from './mergeSort/mergeSort';
 import quickSort from './quickSort/quickSort';
 import quickSort2 from './quickSort/quickSort2';
 import quickSort3 from './quickSort/quickSort3';
+import { heap1, heap2, heap3 } from './heap/heap';
 
 let n = 1000000;
 let arr = generateRandomArray(n, 1, n);
@@ -21,7 +22,11 @@ let arr3 = copyArray(arr);
 // testSort('bubbleSort', bubbleSort, arr);
 // testSort('bubbleSort2', bubbleSort2, arr2);
 // testSort('mergeSort', mergeSort, arr);
-testSort('quickSort', quickSort, arr);
-testSort('quickSort2', quickSort2, arr2);
-testSort('quickSort3', quickSort2, arr3);
+// testSort('quickSort', quickSort, arr);
+// testSort('quickSort2', quickSort2, arr2);
+// testSort('quickSort3', quickSort2, arr3);
+testSort('heap1', heap1, arr);
+testSort('heap2', heap2, arr2);
+testSort('heap3', heap3, arr3);
+
 // printArray(arr);
