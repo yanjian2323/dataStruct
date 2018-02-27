@@ -10,6 +10,8 @@ import quickSort2 from './quickSort/quickSort2';
 import quickSort3 from './quickSort/quickSort3';
 import { heap1, heap2, heap3 } from './heap/heap';
 
+import { binarySearch, binarySearchByRecursion } from './binarySearchTree/binarySearch';
+
 let n = 1000000;
 let arr = generateRandomArray(n, 1, n);
 // let arr = generateNearlyOrderedArray(n, 1000);
@@ -26,7 +28,9 @@ let arr3 = copyArray(arr);
 // testSort('quickSort2', quickSort2, arr2);
 // testSort('quickSort3', quickSort2, arr3);
 testSort('heap1', heap1, arr);
-testSort('heap2', heap2, arr2);
-testSort('heap3', heap3, arr3);
-
+// testSort('heap2', heap2, arr2);
+// testSort('heap3', heap3, arr3);
+let index = binarySearchByRecursion(arr, 40);
+console.log(index);
+console.log(arr[index]);
 // printArray(arr);
