@@ -9,6 +9,7 @@ import quickSort from './quickSort/quickSort';
 import quickSort2 from './quickSort/quickSort2';
 import quickSort3 from './quickSort/quickSort3';
 import { heap1, heap2, heap3 } from './heap/heap';
+import { heap1, heap2, heap3 } from './heap/heap2';
 
 let n = 1000000;
 let arr = generateRandomArray(n, 1, n);
