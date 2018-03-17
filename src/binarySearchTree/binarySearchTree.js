@@ -97,6 +97,89 @@ function _levelOrder (node) {
 	}
 }
 
+function _minimum (node) {
+	// 非递归实现
+	while (node !== null) {
+		node = node.left;
+	}
+	return node;
+	// 递归实现
+	// if (node.left === null) {
+	// 	return node;
+	// }
+	// return _minimum(node.left);
+}
+
+function _maximum (node) {
+	// 非递归实现
+	// while (node !== null) {
+	// 	node = node.right;
+	// }
+	// return node;
+
+	// 递归实现
+	if (node.right === null) {
+		return node;
+	}
+	return _maximum(node.right);
+}
+
+function _removeMin (node) {
+	if (node.left === null) {
+		let rightNode = node.right;
+		node = null;
+		count--;
+		return rightNode;
+	}
+	node.left = _removeMin(node.left);
+	return node;
+}
+
+function _removeMax (node) {
+	if (node.right === null) {
+		let leftNode = node.left;
+		node = null;
+		count--;
+		return leftNode;
+	}
+	node.right = _removeMax(node.right);
+	return node;
+}
+
+function _remove (node, key) {
+	if (node === null) {
+		return null;
+	}
+	if (key < node.key) {
+		node.left = _remove(node.left, key);
+		return node;
+	} else if (key > node.key) {
+		node.right = _remove(node.right, key);
+		return node;
+	}
+	else { // key === node.key,找到了要删除的节点
+		if (node.left === null) {
+			let rightNode = node.right;
+			node = null;
+			count--;
+			return rightNode;
+		}
+		if (node.right === null) {
+			let leftNode = node.left;
+			node = null;
+			count--;
+			return leftNode;
+		}
+		let successor = _minimum(node.right);
+		successor.right = removeMin(node.right);
+		successor.left = node.left;
+
+		node = null;
+
+		return successor;
+	}
+}
+
 // 二分搜索树
 class BinarySearchTree {
 	constructor () {
@@ -138,6 +221,28 @@ class BinarySearchTree {
 	// 广度优先遍历
 	levelOrder () {
 		_levelOrder(rootNode);
+	}
+	// 找到最小值
+	minimum () {
+		let node = _minimum(rootNode);
+		return node.key;
+	}
+	// 找到最大值
+	maximum () {
+		let node = _maximum(rootNode);
+		return node.key;
+	}
+	// 删除最小节点，返回根节点
+	removeMin () {
+		return _removeMin(rootNode);
+	}
+	// 删除最大节点，返回根节点
+	removeMax () {
+		return _removeMax(rootNode);
+	}
+	// 从二叉树中删除key的节点
+	remove (key) {
+		return _remove(rootNode);
 	}
 }
 
