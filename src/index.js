@@ -12,6 +12,7 @@ import { heap1, heap2, heap3 } from './heap/heap';
 import { heap1, heap2, heap3 } from './heap/heap2';
 
 import { binarySearch, binarySearchByRecursion } from './binarySearchTree/binarySearch';
+import { component, path, shortestPath } from './graph/test';
 
 let n = 1000000;
 let arr = generateRandomArray(n, 1, n);
@@ -28,10 +29,15 @@ let arr3 = copyArray(arr);
 // testSort('quickSort', quickSort, arr);
 // testSort('quickSort2', quickSort2, arr2);
 // testSort('quickSort3', quickSort2, arr3);
-testSort('heap1', heap1, arr);
+// testSort('heap1', heap1, arr);
 // testSort('heap2', heap2, arr2);
 // testSort('heap3', heap3, arr3);
-let index = binarySearchByRecursion(arr, 40);
-console.log(index);
-console.log(arr[index]);
+// let index = binarySearchByRecursion(arr, 40);
+// console.log(index);
+// console.log(arr[index]);
 // printArray(arr);
+
+
+console.log('联通分量：',component.count());
+path.printPath(6);
+shortestPath.printPath(6);
