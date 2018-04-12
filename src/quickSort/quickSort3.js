@@ -4,6 +4,9 @@
 
 function _partition3 (arr, l, r) {
 	let v = arr[l];
+	// [l+1,lt] < v
+  	// [lt+1,i) = v
+  	// [gt, r] > v
 	let lt = l, gt = r + 1, i = lt + 1;
 	while(i < gt) {
 		if (arr[i] < v) {
@@ -15,6 +18,7 @@ function _partition3 (arr, l, r) {
 		} else { // arr[i] > v
 			[arr[i], arr[gt - 1]] = [arr[gt - 1], arr[i]];
 			gt--;
+			// 注意此时i不需要++
 		}
 	}
 	[arr[l], arr[lt]] = [arr[lt], arr[l]];
