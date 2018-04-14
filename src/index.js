@@ -15,7 +15,9 @@ import { binarySearch, binarySearchByRecursion } from './binarySearchTree/binary
 import { component, path, shortestPath } from './graph/test';
 
 let n = 1000000;
-let arr = generateRandomArray(n, 1, n);
+// let arr = generateRandomArray(n, 1, n);
+// let arr = [5,6,7,8,1,2,3,4];
+// let arr = [14,13,12,11,10,9,8,7,6,5,4,3];
 // let arr = generateNearlyOrderedArray(n, 1000);
 let arr2 = copyArray(arr);
 let arr3 = copyArray(arr);
@@ -25,7 +27,7 @@ let arr3 = copyArray(arr);
 // testSort('insertionSort2', insertionSort2, arr2);
 // testSort('bubbleSort', bubbleSort, arr);
 // testSort('bubbleSort2', bubbleSort2, arr2);
-// testSort('mergeSort', mergeSort, arr);
+testSort('mergeSort', mergeSort, arr);
 // testSort('quickSort', quickSort, arr);
 // testSort('quickSort2', quickSort2, arr2);
 // testSort('quickSort3', quickSort2, arr3);
@@ -38,6 +40,6 @@ let arr3 = copyArray(arr);
 // printArray(arr);
 
 
-console.log('联通分量：',component.count());
-path.printPath(6);
-shortestPath.printPath(6);
+// console.log('联通分量：',component.count());
+// path.printPath(6);
+// shortestPath.printPath(6);
