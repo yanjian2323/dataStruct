@@ -43,6 +43,7 @@ function _partition2 (arr, l, r) {
 // 注意：不能用3路快速排序实现partition
 
 function _findTopK (arr, l, r, top) {
+	// 永远不会出现l>r的情况，思考为什么？
 	if (l === r) return arr[l];
 	let p = _partition2(arr, l, r);
 	if (p === top) {
