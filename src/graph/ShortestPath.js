@@ -3,6 +3,7 @@ let _g;
 let _s;
 let _visited;
 let _from;
+let _order;//s到w的最短路径值是多少
 // 寻找到s点的最短路径
 export default class ShortestPath{
 	constructor (graph, s) {
@@ -10,18 +11,20 @@ export default class ShortestPath{
 		_s = s;
 		_visited = Array(graph.V()).fill(false);
 		_from = Array(graph.V()).fill(-1);
+		_order = Array(graph.V()).fill(-1);
 		// 定义一个队列
 		let queue = [];
 		queue.push(s);
 		_visited[s] = true;
-		_from[s] = -1;
+		_order[s] = 0;
 		while (queue.length) {
 			let v = queue.shift();
 			for (let i of graph.iterator(v)) {
 				if (!_visited[i]) {
 					queue.push(i);
 					_visited[i] = true;
-					_from[i] = v; 
+					_from[i] = v;
+					_order[i] = _order[v] + 1;
 				}
 			}
 		}
