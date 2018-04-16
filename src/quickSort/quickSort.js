@@ -1,7 +1,7 @@
 function partition (arr, l, r) {
 	let v = arr[l];
 	// [l+1...j] < v
-	// (i, r] >= v
+	// [j+1...i) >= v
 	let j = l;
 	for (let i = l; i <= r; i++) {
 		if (arr[i] < v) {
