@@ -1,9 +1,12 @@
+// 本类实现一个最小堆
 
-let data = [];
-let count = 0;
+let data;
+let count;
+
 function shiftUp (k) {
-	while (k > 1 && data[parseInt(k/2)] > data[k]) {
-		[data[parseInt(k/2)],data[k]] = [data[k],data[parseInt(k/2)]];
+	while (k > 1 && data[k] < data[parseInt(k/2)]) {
+		// 和父节点交换位置
+		[data[k],data[parseInt(k/2)]] = [data[parseInt(k/2)],data[k]];
 		k = parseInt(k/2);
 	}
 }
@@ -12,49 +15,37 @@ function shiftDown (k) {
 	// 还有左节点
 	while (2*k <= count) {
 		let j = 2*k;
-		if (j+1 <=count && data[j+1]<data[j]) {
-			j++;
+		// 还有🈶右节点
+		if (j+1 <= count && data[j+1] < data[j]) {
+			j = j + 1;
 		}
-		if (data[k] <= data[j]) {
-			break;
-		}
-		[data[k],data[j]] = [data[j],data[k]];
+		if (data[k] <= data[j]) break;
+		[data[j],data[k]] = [data[k],data[j]];
 		k = j;
 	}
 }
-
-/*最小堆*/
 export default class MinHeap {
-	constructor (arr) {
+	constructor () {
 		data = [];
 		count = 0;
-		if (arr && arr.length) {
-			this.init(arr);
-		}
-	}
-	init (arr) {
-		for (let [index,item] of arr.entries()) {
-			data[index + 1] = item;
-		}
-		count = arr.length;
-		// 进行heapify操作
-		for (let i = count / 2; i >= 1; i--) {
-			shiftDown(i);
-		}
 	}
 	insert (el) {
-		data[count + 1] = el;
+		data[count+1] = el;
 		count++;
 		shiftUp(count);
 	}
 	extractMin () {
-		let minItem = data[1];
+		let ret = data[1];
 		[data[1],data[count]] = [data[count],data[1]];
 		count--;
 		shiftDown(1);
-		return minItem;
+
+		return ret;
 	}
-	size () {
+	getMinValue () {
+		return data[1];
+	}
+	count () {
 		return count;
 	}
 	isEmpty () {
